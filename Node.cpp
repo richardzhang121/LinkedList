@@ -1,35 +1,33 @@
-#include <iostream>
-#include <cstring>
 #include "Node.h"
+#include <iostream>
 
-using namespace std;
+Node::Node(){
+	student = NULL;
+	next = NULL;
+};
 
-Node::Node(){ //creates initial node and sets value to 0
-    node = NULL;
-    value = 0;
-}
+Node::Node(Student* stud){
+	student = stud;
+	next = NULL;
+};
 
-Node::~Node(){ //deconstructor
-    delete &value;
-    node = NULL;
-}
+Node::~Node(){
+	delete student;
+	delete next;
+};
 
-Node* Node::getNext(){ //returns the next node pointer
-    return node;
-}
+Node* Node::getNext(){
+	return next;
+};
 
-Student* Node::getStudent(){ //next student pointer
-    return NULL;
-}
+Student* Node::getStudent(){
+	return student;
+};
 
-void Node::setNext(Node* newnode){ //sets next node
-    node = newnode;
-} 
+void Node::setNext(Node* node){
+	next = node;
+};
 
-void Node::setValue(int newValue){ //sets the new value
-    value = newValue;
-}
-
-int Node::getValue(){ //returns value
-    return value;
-}
+void Node::setStudent(Student* stud){
+	student = stud;
+};
