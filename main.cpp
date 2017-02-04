@@ -2,8 +2,8 @@
 #include <iostream>
 #include <cstring>
 #include <iomanip>
-#include "student.h"
-#include "node.h"
+#include "Student.h"
+#include "Node.h"
 
 using namespace std;
 
