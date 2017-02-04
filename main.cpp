@@ -10,7 +10,7 @@ using namespace std;
 void addStudent(Node* head, Student* newStudent); // add student
 void printStudents(Node* head); // print student
 void deleteStudent(Node* current, Node* previous, int deleteId); // delete student
-float getAverage(Node* head, int level, float runningTotal); // average all gpa
+float getAverage(Node* head, int counter, float total); // average all gpa
 void deleteHead(Node* head); // delete head node
 
 int main(){
@@ -84,14 +84,14 @@ void deleteStudent(Node* current, Node* previous, int deleteId){ // deletes stud
     cout << "No entries with ID: " << deleteId << endl;
   }
 } 
-float getAverage(Node* head, int level, float runningTotal){ // gets average of all students
-  runningTotal += head->getStudent()->getGpa();
-  level++;
+float getAverage(Node* head, int counter, float total){ // gets average of all students
+  total += head->getStudent()->getGpa();
+  counter++;
   if(head->getNext()){
-    return getAverage(head->getNext(), level, runningTotal);
+    return getAverage(head->getNext(), counter, total);
   }
   else{
-    return runningTotal/level;
+    return total/counter;
   }
 }
 void deleteHead(Node* head){ // delete head node
