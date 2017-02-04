@@ -9,7 +9,7 @@ class Node{
     public:
         Node* getNext();
         Student* getStudent();
-        void setNext(Node*);
+        void setNext(Node*); // sets next
         Node(Student*); //constructor
         ~Node(); //destructor
     protected:
